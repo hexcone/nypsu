@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NYP Students' Union</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body class="home blog">
+  <div id="container" class="hfeed">
+    <div id="header">
+      <div id="logo">
+        <a href="/">
+          <img src="/assets/nypsulogo.png" width="200" alt="NYPSU" />
+        </a>
+      </div>
+
+      <div id="top-widget" class="top-widget">
+        <div id="text-8" class="widget_text">
+          <div class="textwidget"></div>
+        </div>
+      </div>
+
+      <ul id="menu-main" class="menu l_tinynav1">
+        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/">Home</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about/su">About</a>
+          <ul class="sub-menu">
+            <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about/exco/20th">20th exco</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/about/exco/19th">19th exco</a></li>
+          </ul>
+        </li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/happenings/calendar">Happenings</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/facilities/booking">Facilities</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="http://blog.nypsu.com">Blog</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/gallery/view">Gallery</a></li>
+        <li class="menu-item menu-item-type-post_type menu-item-object-page"><a href="/contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <div id="wrapper" class="clearfix">
+      <%= yield %>
+    </div>
+  </div>
+
+  <div id="footer" class="clearfix">
+    <div id="footer-wrapper">
+      <div class="grid col-940">
+        <div class="grid col-380 fit">
+        </div>
+      </div>
+      <div class="grid col-300 copyright">
+        &copy; 2013<a href="http://nypsu.com/" title="NYPSU">
+        NYPSU</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
