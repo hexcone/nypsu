@@ -1,9 +1,14 @@
 Nypsu::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
+  resources :committees
 
   root :to => 'welcome#index'
-  match 'about/su' => 'about#su'
+  match 'about' => 'about#su'
+  match 'happenings' => 'about#happenings'
+  match 'facilities' => 'about#facilities'
+  match 'gallery' => 'about#gallery'
+  match 'contact' => 'about#contact'
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

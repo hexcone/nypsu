@@ -34,4 +34,21 @@ Nypsu::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  # Referenced from http://railscasts.com/episodes/61-sending-email
+  config.action_mailer.raise_delivery_errors = true
+
+  # set delivery method to :smtp, :sendmail or :test
+  config.action_mailer.delivery_method = :smtp
+
+  # these options are only needed if you choose smtp delivery
+  config.action_mailer.smtp_settings = {
+    :address              => 'smtp.gmail.com',
+    :port                 => 587,
+    :domain               => 'gmail.com',
+    :authentication       => "plain",
+    :user_name            => 'nypsuexco@gmail.com',
+    :password             => 'password',
+    :enable_starttls_auto => true
+  }
 end

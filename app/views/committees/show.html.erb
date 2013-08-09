@@ -1,0 +1,77 @@
+<style>
+    ul {
+        list-style-type: none;
+    }
+
+    .sidebar {
+        margin: 0;
+    }
+    #widgets {
+        position: fixed;
+        width: 220px;
+    }
+    #content {
+        width:700px;
+    }
+    .ctr {
+        text-align: center;
+    }
+    .email  {
+        border: none;
+    }
+    article {
+        text-align: center;
+        clear: both;
+    }
+    .col {
+        text-align: center;
+        display:inline-block;
+    }
+
+</style>
+
+<div id="content" class="grid-right col-620 fit">
+  <div id="post-691" class="post-691 page type-page status-publish entry">
+    <div class="ctr">
+      <article id='<%= @committee.name %>'><h2><%= @committee.name %></h2></article>
+      <% @committee.departments.each do |department| %>
+        <article id='<%= department.name %>'>
+          <h2><%= department.name %></h2>
+            <% department.members.each do |member| %>
+              <div class="col">
+                <img src="<%= member.image_path %>" /><br />
+                <%= member.name %> <%= member.comment %><br />
+              </div>
+            <% end %>
+        </article>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<div id="widgets" class="grid-right col-300 rtl-fit" style="margin-top: 20px">
+  <div id="text-4" class="widget-wrapper widget_text">
+      <ul class='sidebar'>
+        <li><a href="#<%= @committee.name %>"><%= @committee.name %></a></li>
+        <% @committee.departments.each do |department| %>
+            <li><a href="#<%= department.name %>"><%= department.name %></a></li>
+        <% end %>
+      </ul>
+  </div>
+</div>
+
+
+<!--
+<h1><%= @committee.name %></h1>
+<table>
+  <% @committee.departments.each do |department| %>
+    <tr>
+      <td><%= department.name %></td>
+      <td>
+        <% department.members.each do |member| %>
+          <%= member.name %>
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+</table>-->
