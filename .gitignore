@@ -83,5 +83,4 @@ pickle-email-*.html
 
 
 ### Password-containing files ###
-/config/environments/development.rb
-/config/environments/production.rb
+/config/application.rb

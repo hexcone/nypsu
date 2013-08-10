@@ -1,0 +1,17 @@
+<h2 class="title">Contact Us</h2>
+<%= flash[:alert] %>
+<%= form_for @message, :url => contact_path do |form| %>
+  <%= form.text_field :name, :placeholder => 'Name' %>
+  <br /><br />
+
+  <%= form.text_field :email, :placeholder => 'Email Address' %>
+  <br /><br />
+
+  <%= form.text_field :subject, :placeholder => 'Subject' %>
+  <br /><br />
+
+  <%= form.text_area :body, :placeholder => 'Content', class:'ckeditor'%>
+  <br /><br />
+
+  <%= form.submit "Send" %>
+<% end %>

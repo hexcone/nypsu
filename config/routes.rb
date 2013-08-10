@@ -8,7 +8,9 @@ Nypsu::Application.routes.draw do
   match 'happenings' => 'about#happenings'
   match 'facilities' => 'about#facilities'
   match 'gallery' => 'about#gallery'
-  match 'contact' => 'about#contact'
+
+  match 'contact' => 'contact#new', :as => 'contact', :via => :get
+  match 'contact' => 'contact#create', :as => 'contact', :via => :post
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
